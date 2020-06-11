@@ -1,0 +1,347 @@
+@name Job Vending Machine 1.0V
+@inputs
+@outputs Units:string Cars:string Destination:string Loops:string Load:string Time:string Sign:string NickName:string PlayerName:string
+@persist Cars:string Units:string Destination:string Loops:string Load:string Time:string Sign:string PlayerName:string
+@model models/props_interiors/vendingmachinesoda01a.mdl
+
+
+
+#|
+#|  made by maX
+#|
+#|  if you want it to work place it on the ground and it would show in chat your job for today!
+#|
+#|  to try next job refresh the e2 pointing the e2 tool gun and by clicking "R" on the vending machine
+#|
+#|
+#|  The only two sad things are you need to spawn the cars and it only works on sunsetgulch but ill work on the second bit
+#|
+#|
+#|  if you want to implement it to your train delete the @model models/props_interiors/vendingmachinesoda01a.mdl   <----- 
+#|
+#|  
+#|  when making a custom car with for example old engines.. etcetera... please multiparent them 
+#|  fast tutorial by me how to parent things you click LMB on the prop (NOT THE CAR) and to parent it to the car click RMB 
+#|  for example you got a flatcar and your gonna put a bit fat digger on it so you want to parent the digger TO the flatcar
+#|  so you put the digger on the car and click LMB so its green and RMB on the car so the digger is not green and its parented! 
+#|  
+#|  PLEASE PARENT YOUR PROPS NOT WELD BECOUS IT HELPS THE SERVER AND YOU WILL NOT GET LAG SPIKES THE WHOLE SERVER FEELS THEM IF ITS WELDED
+#|
+#|
+#|
+#|  WHEN USING THE VENDING MACHINE REMEBER TO HAVE FUN!
+
+
+
+
+if(duped()|first()){
+    
+
+
+  
+Min = 0
+Max = 3
+Loops1 = randint(Min,Max):toString()
+
+Min = 1
+Max = 43
+Destination = randint(Min,Max):toString()
+if(Destination=="1"){
+    Destination="Wolfram - Rockfort"
+    Time="23 minutes"
+    Loops=Loops
+    Load="Autorack box scrap empty bepsi load empty wellcar"
+   
+}
+ if(Destination=="2"){
+    Destination="Wolfram - Lumber Mill"
+    Time="6 minutes"
+    Loops=Loops
+    Load="centerbeam flatcar"   
+}   
+ if(Destination=="3"){
+    Destination="Rockfort - Lumber Mill"
+    Time="18 minutes"
+    Loops="0"
+    Load="centerbeam flatcar"   
+}
+ if(Destination=="4"){
+    Destination="Rockfort - Wolfram"
+    Time="28 minutes"
+    Loops=Loops
+    Load="Autorack box scrap empty bepsi load empty wellcar"    
+}
+ if(Destination=="5"){
+    Destination="Lumber Mill - Wolfram"
+    Time="8 minutes"
+    Loops=Loops
+    Load="centerbeam laod log_flatcar"    
+}
+ if(Destination=="6"){
+    Destination="Lumber Mill - Rockfort"
+    Time="18 minutes"
+      Loops="0"
+    Load="wood log_flatcar centerbeam"    
+}
+ if(Destination=="7"){
+    Destination="Wolfram - Redwall"
+    Time="6 minutes"
+    Loops=Loops
+    Load="box tanker lpg ethanol oil empty"    
+}
+ if(Destination=="8"){
+    Destination="Redwall - Wolfram"
+    Time="9 minutes"
+    Loops=Loops
+    Load="load box tanker lpg ethanol oil"
+}
+ if(Destination=="9"){
+    Destination="Redwall - Lumber Mill"
+    Time="3 minutes"
+      Loops="0"
+    Load="load tanker lpg ethanol oil"   
+}
+ if(Destination=="10"){
+    Destination="Lumber Mill - Redwall"
+    Time="3 minutes"
+      Loops="0"
+    Load="empty tanker"    
+}
+ if(Destination=="11"){
+    Destination="Lumber Mill - Crystal Lake"
+    Time="6 minutes"
+    Loops="0"
+    Load="box wood log_flatcar"    
+}
+ if(Destination=="12"){
+    Destination="Crystal Lake - Lumber Mill"
+    Time="9 minutes"
+    Loops="0"
+    Load="box tanker gondola"   
+}
+ if(Destination=="13"){
+    Destination="Redwall - Crystal Lake"
+    Time="5 minutes"
+    Loops="0"
+    Load="box tanker gondola"   
+}
+ if(Destination=="14"){
+#<----------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                        
+Destination="Crystal Lake - Redwall"                                                                                                                                                                                                          
+    Time="6 minutes"
+    Load="box empty tanker lgp ethanol"   
+}
+ if(Destination=="15"){
+    Destination="Rockfort - Redwall"
+    Time="21 minutes"
+     Loops="0"
+    Load="tanker ethanol lpg chemical oil empty box"   
+}
+ if(Destination=="16"){
+    Destination="Redwall - Rockfort"
+    Time="18 minutes"
+    Loops="0"
+    Load="tanker ethanol lpg chemical oil box"    
+}
+ if(Destination=="17"){
+    Destination="Rockfort - Crystal Lake"
+    Time="13 minutes"
+    Loops="0"
+    Load="tanker ethanol lpg chemical oil empty box gondola laod"   
+}
+ if(Destination=="18"){
+    Destination="Crystal Lake - Rockfort"
+    Time="16 minutes"
+     Loops="0"
+    Load="tanker ethanol lpg chemical oil box gondola empty"  
+}
+ if(Destination=="19"){
+    Destination="Rockfort - Lumber Mill"
+    Time="18 minutes"
+     Loops="0"
+    Load="centerbeam flatcar gondola empty"    
+}
+ if(Destination=="20"){
+    Destination="Blackrock - Wolfram"
+    Time="12 minutes"
+      Loops=Loops
+    Load="gondola flatcar empty"   
+}
+ if(Destination=="21"){
+    Destination="Wolfram - Blackrock"
+    Time="10 minutes"
+    Loops=Loops
+    Load="scrap gondola box preera box"  
+}
+ if(Destination=="22"){
+    Destination="Redwall - Blackrock"
+    Time="5 minutes"
+     Loops="0"
+    Load="scrap gondola box preera box"   
+}
+ if(Destination=="23"){
+    Destination="Blackrock - Redwall"
+    Time="7 minutes"
+     Loops="0"
+    Load="gondola flatcar empty"   
+}
+ if(Destination=="24"){
+    Destination="Derrickson West - Wolfram"
+    Time="13 minutes"
+     Loops=Loops
+    Load="hopper box tanker gondola coal cement load"    
+}
+ if(Destination=="25"){
+    Destination="Wolfram - Derrickson West"
+    Time="11 minutes"
+     Loops=Loops
+    Load="hopper box tanker gondola flatcar digger cement empty" 
+}
+ if(Destination=="26"){
+    Destination="Rockfort - Derrickson West"
+    Time="14 minutes"
+     Loops="0"
+    Load="hopper box tanker gondola flatcar digger cement empty" 
+}
+ if(Destination=="27"){
+    Destination="Derrickson West - Rockfort"
+    Time="16 minutes"
+     Loops="0"
+    Load="hopper box tanker gondola coal cement load"   
+}
+ if(Destination=="28"){
+    Destination="Rockfort - Derrickson West"
+    Time="18 minutes"
+     Loops="0"
+    Load="hopper box tanker gondola flatcar digger cement empty"   
+}
+ if(Destination=="29"){
+    Destination="Derrickson East - Wolfram"
+    Time="13 minutes"
+     Loops=Loops
+    Load="hopper box tanker gondola cement load"   
+}
+ if(Destination=="30"){
+    Destination="Rockfort - Derrickson East"
+    Time="19 minutes"
+     Loops="0"
+      Load="empty hopper gondola cement"   
+}
+ if(Destination=="31"){
+    Destination="Derrickson East - Rockfort"
+    Time="17 minutes"
+     Loops="0"
+     Load="hopper cement"  
+}
+ if(Destination=="32"){
+    Destination="Crystal Lake - Derrickson West"
+    Time="5 minutes"
+     Loops="0"
+    Load="empty hopper gondola cement tanker flatcar digger oil lpg"    
+}
+ if(Destination=="33"){
+    Destination="Crystal Lake - Derrickson East"
+    Time="5 minutes"
+     Loops="0"
+    Load="empty hopper gondola cement"   
+}
+ if(Destination=="34"){
+    Destination="Derrickson West - Crystal Lake"
+    Time="7 minutes"
+     Loops="0"
+    Load="hopper box tanker gondola coal cement load"   
+}
+ if(Destination=="35"){
+    Destination="Derrickson East - Crystal Lake"
+    Time="9 minutes"
+     Loops="0"
+    Load="load hopper gondola cement grain gravel"   
+}
+ if(Destination=="36"){
+    Destination="Redwall - Derrickson West"
+    Time="7 minutes"
+     Loops="0"
+    Load="empty hopper gondola cement load oil lpg ethanol"    
+}
+ if(Destination=="37"){
+    Destination="Redwall - Derrickson Eest"
+    Time="8 minutes"
+     Loops="0"
+    Load="empty hopper gondola cement"    
+}
+ if(Destination=="38"){
+    Destination="Derrickson East - Redwall"
+    Time="12 minutes"
+     Loops="0"    
+    Load="load hopper gondola cement grain gravel"   
+}
+ if(Destination=="39"){
+    Destination="Derrickson West - Redwall"
+    Time="11 minutes"
+     Loops="0"
+    Load="hopper box tanker gondola coal cement load"   
+}
+ if(Destination=="40"){
+    Destination="Lumber Mill - Derrickson West"
+    Time="8 minutes"
+     Loops="0"
+    Load="centerbeam log_flatcar wood load gondola hopper empty"   
+}
+ if(Destination=="41"){
+    Destination="Derrickson West - Lumber Mill"
+    Time="10 minutes"
+     Loops="0"
+    Load="box cement flatcar hopper cement empty"   
+}
+ if(Destination=="42"){
+    Destination="Lumber Mill - Derrickson East"
+    Time="9 minutes"
+     Loops="0"
+    Load="log_flatcar wood hopper gondola empty" 
+}
+ if(Destination=="43"){
+    Destination="Derrickson East - Lumber Mill"
+    Time="11 minutes"}
+   Loops="0"
+    Load="empty cement hopper gondola flatcar box"
+   
+Min = 1
+Max = 9
+Sign = randint(Min,Max):toString()    
+if(Sign=="1"){
+Sign="MA"}
+if(Sign=="2"){
+Sign="D"}
+if(Sign=="3"){
+Sign="EB"}
+if(Sign=="4"){
+Sign="Y"}
+if(Sign=="5"){
+Sign="M"}
+if(Sign=="6"){
+Sign="AX"}
+if(Sign=="7"){
+Sign="BI"}
+if(Sign=="8"){
+Sign="T"}
+if(Sign=="9"){
+Sign="CH"}
+#car amout    
+Min = 0
+Max = 20
+Cars = randint(Min,Max):toString()
+print("Cars: "+Cars)
+#unit amout
+Min = 1
+Max = 2
+Units = randint(Min,Max):toString()
+PlayerName=owner():toString()
+NickName=Sign+Cars+Units
+print("Units: "+Units)
+print("Load: "+Load)
+print("Destination:  "+Destination)
+print("Loops on the main loop:  "+Loops)
+print("Time you need: "+Time+"  !One loop is 2 minutes!")}
+print("Your train nick name is: "+NickName)
+print("spawn via spawner: .sp "+Cars+" "+Load)
+
